@@ -1,41 +1,55 @@
 class Instagram:
-    def __init__(self, title, description, creator_name, location, comments):
-        self.title = title
-        self.description = description
-        self.creator_name = creator_name
-        self.location = location
-        self.comments = comments   # list of strings
-        self.likes = 0
+    def __init__(self,title,description,comments,creator_name,location):
+        self.title=title
+        self.description=description
+        self.likes=0
+        self.creator_name=creator_name
+        self.location=location
+        self.comments=comments
 
-    def display_creator_name(self):
-        print("Creator:", self.creator_name)
+    def display_title(self):
+        print("The title of the reel is", self.title)
 
-    def display_location(self):
-        print("Location:", self.location)
-
-    def display_comments(self):
-        print("Comments:", self.comments)
-       
-            
-
-    def liked(self):
-        self.likes += 1
+    def display_description(self):
+        print("The description ofn the reel is",self.description)
 
     def display_likes(self):
+        print("the number of likes",self.likes)
+
+    def display_dislikes(self):
+        print("the number of dislikes",self.likes)
+
+    def display_creator_name(self):
+        print("The creator name is ",self.creator_name)
+
+    def display_location(self):
+        print("The location is ",self.location)
+    
+    def liked(self):
+        self.likes+=1
+    
+    def disliked(self):
         if self.likes>0:
-            print("Likes:", self.likes)
+            self.likes-=1
+
+    def display_comments(self):
+        print("The comments are:")
+        for comment in self.comments:
+            print("-",comment)
+
+    def delete_last_comment(self):
+        if len(self.comments)>0:
+            removed_comments=self.comments.pop()
+            print("Removed comments",removed_comments)
 
 
-reel1 = Instagram(
-    "dance",
-    "dancing with friends",
-    "Reel creator",
-    "Bangalore",
-    ["Super dance", "Rocked it", "Good dance"]
-)
+reel1=Instagram("dancing","trending reels",["super dance","Rocked it","Good dance"],"Reel_creator","Bangalore")
 
-reel1.liked()
-reel1.display_likes()
+reel1.liked() 
+reel1.liked() 
+reel1.display_likes() 
+reel1.display_comments()
 reel1.display_creator_name()
 reel1.display_location()
+reel1.delete_last_comment()
 reel1.display_comments()
