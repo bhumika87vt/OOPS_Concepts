@@ -1,5 +1,5 @@
 #Hierarchical Inheritance
-'''class BankAccount:
+class BankAccount:
     def __init__(self,account_holder,balance):
         self.account_holder=account_holder
         self.balance=balance
@@ -52,7 +52,7 @@ savings.display_balance()
 current = CurrentAccount("Tanu", 5000, 3000)
 current.deposit(1000)
 current.withdraw_with_overdraft(6500)
-current.display_balance()'''
+current.display_balance()
 
         
 #Hybrid Inheritance
